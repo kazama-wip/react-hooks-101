@@ -29,7 +29,7 @@ const App = () => {
       if (previousCount % 3 === 0) {
         return previousCount / 3
       } else {
-        return
+        return previousCount
       }
 
     }
