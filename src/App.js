@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 const App = props => {
 
   const [state, setState] = useState(props)
+  const { name, price } = state
   const reset = () => {
     setState(props)
   }
-  const { name, price } = state
+  useEffect(() => {
+    console.log('This is like  componentDidMount or conponentDidUpdate.')
+  })
+  useEffect(() => {
+    console.log('This is like  componentDidMount.')
+  }, [])
+
+  useEffect(() => {
+    console.log('This callback is for name only.')
+  }, [name])
+
   return (
     <React.Fragment>
-      <p>現在の{state.name}は、{state.price}です。</p>
+      <p>現在の{state.name}は、{state.price}です</p>
       <button onClick={() => setState({ ...state, price: price + 1 })}>+1</button>
       <button onClick={() => setState({ ...state, price: price - 1 })}>-1</button>
       <button onClick={reset}>Reset</button>
