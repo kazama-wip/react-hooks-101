@@ -1,7 +1,5 @@
 import {
-  CREATE_EVENT,
-  DELETE_ALL_EVENTS,
-  DELETE_EVENT
+  CREATE_EVENT, DELETE_ALL_EVENTS, DELETE_EVENT
 } from '../actions'
 
 const events = (state = [], action) => {
